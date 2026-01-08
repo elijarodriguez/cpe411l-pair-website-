@@ -184,3 +184,64 @@ button:hover {
     --accent-color: #e74c3c;
     --light-bg: #f8f9fa;
 }
+
+/* ===== MINIMAL ENHANCEMENTS ===== */
+
+/* Add subtle animation to page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Make navigation stand out more */
+nav {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add highlight to important text */
+h1 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Add subtle hover to footer */
+footer:hover {
+    background: #1a252f;
+    transition: background 0.3s ease;
+}
+
+/* Style the "Omsim pare" text */
+main p:last-child {
+    font-weight: bold;
+    color: #2c3e50;
+    font-style: italic;
+}
+
+/* Make FAQ questions stand out */
+faq.html p:nth-child(odd) {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 1rem;
+}
+
+/* Style the "ALA PARE" text */
+about.html p:last-child {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+/* Add subtle border to images page link */
+nav a[href="images.html"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+}

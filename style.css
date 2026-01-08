@@ -17,26 +17,45 @@ body {
     padding: 20px;
 }
 
-/* ===== NAVIGATION ===== */
+/* ===== IMPROVED NAVIGATION ===== */
 nav {
     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    padding: 1rem 2rem;
+    padding: 1rem;
     margin-bottom: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Desktop navigation - horizontal */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+    padding: 0;
+}
+
 nav a {
     color: white;
-    margin-right: 2rem;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 5px;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    margin: 2px;
+    min-width: 120px;
     position: relative;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 nav a:hover {
@@ -60,10 +79,71 @@ nav a:hover::after {
     width: calc(100% - 20px);
 }
 
-/* Add subtle border to images page link */
-nav a[href="images.html"] {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px dashed rgba(255, 255, 255, 0.3);
+/* ===== MOBILE NAVIGATION ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    nav {
+        padding: 0.8rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    nav a {
+        display: block;
+        width: 100%;
+        margin: 4px 0;
+        padding: 0.9rem;
+        font-size: 1rem;
+        min-width: auto;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Remove the underline effect on mobile for better touch */
+    nav a::after {
+        display: none;
+    }
+    
+    nav a:hover {
+        transform: translateY(0);
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    main {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    .proof-item {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+    nav a {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+        margin: 3px 0;
+    }
+    
+    body {
+        padding: 8px;
+    }
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -167,43 +247,6 @@ button {
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-}
-
-/* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    nav {
-        padding: 1rem;
-        text-align: center;
-    }
-    
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        padding: 0.8rem;
-        width: calc(50% - 10px);
-        text-align: center;
-    }
-    
-    main {
-        padding: 1.5rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    form {
-        padding: 1.5rem;
-    }
-    
-    .proof-item {
-        width: 100%;
-        margin: 15px 0;
-    }
 }
 
 /* ===== ADD SOME NICE EFFECTS ===== */
